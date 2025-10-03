@@ -1,244 +1,204 @@
 import React from 'react';
 import styled from 'styled-components';
-import Navigation from '../components/Navigation';
 
 const HomeContainer = styled.div`
-  position: relative;
-  width: 100%;
   min-height: 100vh;
-  background: #222222;
-  color: #FFFFFF;
-  overflow-x: hidden;
+  background: #222;
+  display: flex;
+  flex-direction: column;
 `;
 
 const MainContent = styled.div`
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  padding: 5rem 4rem 0;
+  padding: 140px 68px 80px;
+
+  @media (max-width: 1024px) {
+    padding: 120px 40px 60px;
+  }
 
   @media (max-width: 768px) {
-    padding: 4rem 1.5rem 0;
+    padding: 100px 24px 40px;
   }
 `;
 
-const ProfileSection = styled.div`
+const CentreContent = styled.div`
   display: flex;
-  gap: 4rem;
   align-items: center;
-  max-width: 75rem;
+  gap: 90px;
+  max-width: 1284px;
   width: 100%;
 
-  @media (max-width: 1024px) {
-    gap: 2.5rem;
+  @media (max-width: 1200px) {
+    gap: 60px;
   }
 
   @media (max-width: 768px) {
     flex-direction: column;
-    gap: 2rem;
+    gap: 40px;
     text-align: center;
   }
 `;
 
-const ProfileImage = styled.div`
-  width: 25rem;
-  height: 25rem;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 0.5rem solid #333333;
+const PhotoWrapper = styled.div`
+  position: relative;
+  width: 528px;
+  height: 528px;
   flex-shrink: 0;
-  
+
+  @media (max-width: 1200px) {
+    width: 400px;
+    height: 400px;
+  }
+
+  @media (max-width: 768px) {
+    width: 320px;
+    height: 320px;
+  }
+
+  @media (max-width: 480px) {
+    width: 280px;
+    height: 280px;
+  }
+`;
+
+const PhotoInner = styled.div`
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
-
-  @media (max-width: 1024px) {
-    width: 18.75rem;
-    height: 18.75rem;
-  }
-
-  @media (max-width: 768px) {
-    width: 15.625rem;
-    height: 15.625rem;
-  }
-
-  @media (max-width: 480px) {
-    width: 12.5rem;
-    height: 12.5rem;
-  }
 `;
 
 const ProfileInfo = styled.div`
-  max-width: 37.5rem;
-  
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
   @media (max-width: 768px) {
-    display: flex;
-    flex-direction: column;
     align-items: center;
   }
 `;
 
-const Role = styled.h2`
+const Role = styled.div`
   font-family: 'Poppins', sans-serif;
-  font-size: 1.5rem;
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 1.25rem;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 35px;
+  color: rgba(255, 255, 255, 0.5);
 
-  @media (max-width: 1024px) {
-    font-size: 1.25rem;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 1.125rem;
+  @media (max-width: 768px) {
+    font-size: 20px;
   }
 `;
 
 const Name = styled.h1`
   font-family: 'Poppins', sans-serif;
-  font-size: 4rem;
+  font-size: 70px;
   font-weight: 700;
-  margin-bottom: 1.875rem;
+  line-height: 35px;
+  color: #FFF;
+  margin: 20px 0;
 
-  @media (max-width: 1024px) {
-    font-size: 3rem;
+  @media (max-width: 1200px) {
+    font-size: 56px;
   }
 
   @media (max-width: 768px) {
-    font-size: 2.5rem;
+    font-size: 42px;
   }
 
   @media (max-width: 480px) {
-    font-size: 2rem;
+    font-size: 36px;
   }
 `;
 
 const Description = styled.p`
   font-family: 'Poppins', sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 2.5rem;
-  max-width: 34.375rem;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 35px;
+  color: #FFF;
+  max-width: 674px;
+  margin: 24px 0 40px;
 
   @media (max-width: 768px) {
-    font-size: 0.875rem;
+    font-size: 18px;
+    line-height: 32px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 16px;
+    line-height: 28px;
   }
 `;
 
 const ButtonGroup = styled.div`
   display: flex;
-  gap: 1.25rem;
+  gap: 15px;
 
   @media (max-width: 480px) {
     flex-direction: column;
-    gap: 1rem;
+    width: 100%;
+    max-width: 280px;
   }
 `;
 
 const Button = styled.a`
-  padding: 0.75rem 1.875rem;
-  border: 0.125rem solid #FFFFFF;
-  border-radius: 1.875rem;
-  font-family: 'Poppins', sans-serif;
-  font-size: 1rem;
-  color: #FFFFFF;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  
-  &:hover {
-    background: #FFFFFF;
-    color: #222222;
-  }
-
-  @media (max-width: 768px) {
-    font-size: 0.875rem;
-    padding: 0.625rem 1.5625rem;
-  }
-`;
-
-const SocialLinks = styled.div`
-  position: absolute;
-  bottom: 1.25rem;
-  left: 0;
-  right: 0;
   display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 1.875rem;
-
-  @media (max-width: 768px) {
-    gap: 1.25rem;
-    bottom: 3.75rem;
-  }
-`;
-
-const SocialLink = styled.a`
+  height: 62px;
+  padding: 0 40px;
+  border-radius: 30px;
+  border: 3px solid #D5D5D5;
+  background: #333;
   font-family: 'Poppins', sans-serif;
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.5);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 35px;
+  color: #FFF;
   text-decoration: none;
-  transition: color 0.2s ease;
-  
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.5));
+  transition: all 0.3s ease;
+  cursor: pointer;
+
   &:hover {
-    color: #FFFFFF;
+    background: #444;
+    transform: translateY(-2px);
   }
 
-  @media (max-width: 768px) {
-    font-size: 0.875rem;
-  }
-`;
-
-const Copyright = styled.div`
-  position: absolute;
-  bottom: 1.25rem;
-  right: 3.75rem;
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.8);
-
-  @media (max-width: 768px) {
-    position: relative;
-    text-align: center;
-    right: 0;
-    margin-top: 2.5rem;
-    font-size: 0.75rem;
+  @media (max-width: 480px) {
+    width: 100%;
   }
 `;
 
 const Home = () => {
   return (
     <HomeContainer>
-      <Navigation />
       <MainContent>
-        <ProfileSection>
-          <ProfileImage>
-            <img src="/profile.jpg" alt="Shubham Agrawal" />
-          </ProfileImage>
+        <CentreContent>
+          <PhotoWrapper>
+            <PhotoInner>
+              <img src="/profile.jpg" alt="Shubham Agrawal" />
+            </PhotoInner>
+          </PhotoWrapper>
           <ProfileInfo>
             <Role>Software Developer 2</Role>
             <Name>Shubham Agrawal</Name>
             <Description>
-              I am a results-driven Software Developer with expertise in RESTful
-              APIs, microservices, and cloud technologies. I excel at optimizing
-              application performance, enhancing security, and resolving
-              complex issues.
+              I am a results-driven Software Developer with expertise in RESTful APIs, microservices, and cloud technologies. I excel at optimizing application performance, enhancing security, and resolving complex issues.
             </Description>
             <ButtonGroup>
               <Button href="/resume.pdf" target="_blank">Resume</Button>
-              <Button href="/contact">Contact</Button>
+              <Button href="#contact">Contact</Button>
             </ButtonGroup>
           </ProfileInfo>
-        </ProfileSection>
+        </CentreContent>
       </MainContent>
-
-      <SocialLinks>
-        <SocialLink href="https://github.com/shubhamagrawal6" target="_blank">Github</SocialLink>
-        <SocialLink href="https://linkedin.com/in/shubhamagrawal6" target="_blank">LinkedIn</SocialLink>
-        <SocialLink href="https://leetcode.com/shubhamagrawal6" target="_blank">LeetCode</SocialLink>
-      </SocialLinks>
-      <Copyright>© 2025 All Rights Reserved.</Copyright>
     </HomeContainer>
   );
 };

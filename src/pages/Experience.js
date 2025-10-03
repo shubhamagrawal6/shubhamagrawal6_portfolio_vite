@@ -1,276 +1,257 @@
 import React from 'react';
 import styled from 'styled-components';
-import Navigation from '../components/Navigation';
 
 const ExperienceContainer = styled.div`
-  position: relative;
-  width: 100%;
   min-height: 100vh;
-  background: #222222;
-  color: #FFFFFF;
-  padding: 7.5rem 3.75rem 5rem;
+  background: #222;
+  display: flex;
+  flex-direction: column;
+  padding-top: 93px;
+`;
+
+const Header = styled.div`
+  width: 100%;
+  height: 125px;
+  background: #252525;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+  display: flex;
+  align-items: center;
+  padding: 0 68px;
 
   @media (max-width: 768px) {
-    padding: 6.25rem 1.25rem 3.75rem;
+    padding: 0 24px;
+    height: 100px;
   }
 `;
 
 const PageTitle = styled.h1`
-  font-family: 'Poppins';
-  font-size: 3rem;
-  font-weight: 600;
-  margin-bottom: 3.75rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 55px;
+  font-weight: 700;
+  line-height: 35px;
+  color: #FFF;
 
   @media (max-width: 768px) {
-    font-size: 2.25rem;
-    margin-bottom: 2.5rem;
+    font-size: 42px;
   }
 
   @media (max-width: 480px) {
-    font-size: 2rem;
-    margin-bottom: 1.875rem;
+    font-size: 36px;
   }
 `;
 
 const Content = styled.div`
-  max-width: 75rem;
-  margin: 0 auto;
-`;
+  flex: 1;
+  padding: 53px 110px 80px;
+  display: flex;
+  gap: 150px;
 
-const ExperienceCard = styled.div`
-  margin-bottom: 3.75rem;
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.03);
-  border-radius: 0.625rem;
-  transition: transform 0.2s ease;
+  @media (max-width: 1400px) {
+    gap: 80px;
+  }
 
-  &:hover {
-    transform: translateY(-0.25rem);
-    background: rgba(255, 255, 255, 0.05);
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    padding: 40px 40px 60px;
+    gap: 60px;
   }
 
   @media (max-width: 768px) {
-    margin-bottom: 2.5rem;
-    padding: 1.5rem;
+    padding: 40px 24px 60px;
+  }
+`;
+
+const LeftCol = styled.div`
+  flex: 1;
+`;
+
+const RightCol = styled.div`
+  flex: 1;
+`;
+
+const ExperienceCard = styled.div`
+  margin-bottom: 60px;
+
+  &:last-child {
+    margin-bottom: 0;
   }
 `;
 
 const CompanyHeader = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.25rem;
+  gap: 20px;
+  margin-bottom: 24px;
+`;
+
+const CompanyLogo = styled.img`
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  flex-shrink: 0;
 
   @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.625rem;
+    width: 60px;
+    height: 60px;
   }
 `;
 
 const CompanyInfo = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-
-  @media (max-width: 480px) {
-    gap: 0.9375rem;
-  }
-`;
-
-const CompanyLogo = styled.img`
-  width: 3rem;
-  height: 3rem;
-  object-fit: contain;
-  border-radius: 0.375rem;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 0.375rem;
-
-  @media (max-width: 480px) {
-    width: 2.5rem;
-    height: 2.5rem;
-  }
+  flex: 1;
 `;
 
 const CompanyName = styled.h3`
-  font-family: 'Poppins';
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: #FFFFFF;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 35px;
+  color: #FFF;
+  margin-bottom: 4px;
 
   @media (max-width: 768px) {
-    font-size: 1.25rem;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 1.125rem;
+    font-size: 16px;
   }
 `;
 
 const Location = styled.span`
-  font-family: 'Poppins';
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.7);
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
   font-style: italic;
+  line-height: 35px;
+  color: #FFF;
 
   @media (max-width: 768px) {
-    font-size: 0.875rem;
+    font-size: 16px;
   }
 `;
 
-const RoleInfo = styled.div`
-  margin-bottom: 1.25rem;
-
-  @media (max-width: 768px) {
-    margin-bottom: 0.9375rem;
-  }
+const RoleSection = styled.div`
+  margin-bottom: 24px;
 `;
 
 const Position = styled.h4`
-  font-family: 'Poppins';
-  font-size: 1.25rem;
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-  color: rgba(255, 255, 255, 0.9);
-
-  @media (max-width: 768px) {
-    font-size: 1.125rem;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 1rem;
-  }
-`;
-
-const Duration = styled.span`
-  font-family: 'Poppins';
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.7);
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
   font-style: italic;
+  line-height: 35px;
+  color: #FFF;
+  margin-bottom: 8px;
 
   @media (max-width: 768px) {
-    font-size: 0.875rem;
+    font-size: 16px;
   }
 `;
 
-const Details = styled.ul`
-  list-style-type: disc;
-  padding-left: 1.25rem;
-  margin-bottom: 1.25rem;
-  
-  li {
-    font-family: 'Poppins';
-    font-size: 0.875rem;
-    line-height: 1.8;
-    color: rgba(255, 255, 255, 0.7);
-    margin-bottom: 0.5rem;
-    padding-left: 0.5rem;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-
-    @media (max-width: 768px) {
-      font-size: 0.8125rem;
-      line-height: 1.6;
-    }
-  }
-
-  @media (max-width: 480px) {
-    padding-left: 0.9375rem;
-  }
+const Description = styled.div`
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 16px;
 `;
 
 const CertificateLink = styled.a`
-  font-family: 'Poppins';
-  font-size: 0.875rem;
-  color: #4A9DEC;
-  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 20px;
+  color: #6BE1FF;
+  text-decoration: underline;
   display: inline-block;
-  margin-top: 0.625rem;
-  padding: 0.375rem 0;
-  transition: all 0.2s ease;
-  
-  &:hover {
-    color: #7AB7F0;
-    transform: translateX(0.25rem);
-  }
+  margin-top: 8px;
+  cursor: pointer;
 
-  @media (max-width: 768px) {
-    font-size: 0.8125rem;
+  &:hover {
+    color: #8EEAFF;
   }
 `;
 
 const Experience = () => {
   return (
     <ExperienceContainer>
-      <Navigation />
-      <Content>
+      <Header>
         <PageTitle>Experience</PageTitle>
-        
-        <ExperienceCard>
-          <CompanyHeader>
-            <CompanyInfo>
-              <CompanyLogo src="/logos/oracle-logo.png" alt="Oracle" />
-              <CompanyName>Oracle Financial Services Software</CompanyName>
-            </CompanyInfo>
-            <Location>Bengaluru, IN</Location>
-          </CompanyHeader>
-          <RoleInfo>
-            <Position>Software Developer 2</Position>
-            <Duration>Sep 24 - Present</Duration>
-          </RoleInfo>
-          <Details>
-            <li>Enhanced database modification procedures by integrating with external systems, enabling bi-directional sync. Designed API interface for ensuring UI-confined modifications are synchronized and persisted across systems.</li>
-            <li>Designed and implemented SCIM-compliant APIs in the User and Role Management service, enabling seamless integration and provisioning of user-role logical constructs to applications.</li>
-            <li>Redesigned the audit logging framework for microservices by capturing both UTC timestamps and branch context in its entries, providing data to drive PL/SQL and database audit tracking to improve transparency and usability.</li>
-            <li>Collaborated with cross-functional teams, including development and consulting teams, to deliver rapid solutions for high-severity issues while minimizing downtime.</li>
-          </Details>
-          <CertificateLink href="https://drive.google.com/file/xxx" target="_blank">
-            Certificate On Google Drive →
-          </CertificateLink>
-        </ExperienceCard>
+      </Header>
+      <Content>
+        <LeftCol>
+          <ExperienceCard>
+            <CompanyHeader>
+              <CompanyLogo src="https://api.builder.io/api/v1/image/assets/TEMP/034c6b38218f82a1b8e6a56edbe926ca56d268d7?width=201" alt="Oracle" />
+              <CompanyInfo>
+                <CompanyName>Oracle Financial Services Software</CompanyName>
+                <Location>Bengaluru, IN</Location>
+              </CompanyInfo>
+            </CompanyHeader>
+            
+            <RoleSection>
+              <Position>Software Developer 2                                                          Sep 24 - Present</Position>
+              <Description>
+                Enhanced microservices handling core resources by integrating with external systems, enabling extensibility of resource data and ensuring UI-captured modifications are synchronized and persisted across systems.
+                Designed and implemented SCIM-compliant APIs in the User and Role Management service, enabling seamless migration and provisioning of SSO-managed users into the application.
+                Redesigned the audit logging framework for microservices by capturing both UTC timestamps and branch context time zones, providing dual UI views for global and localized audit tracking to improve transparency and usability.
+                Collaborated with cross-functional teams, including development and consulting teams, to deliver rapid solutions for high-severity production issues, minimizing downtime.
+              </Description>
+            </RoleSection>
 
-        <ExperienceCard>
-          <CompanyHeader>
-            <CompanyInfo>
-              <CompanyLogo src="/logos/healthnow-logo.png" alt="HealthNow" />
-              <CompanyName>HealthNow Technologies</CompanyName>
-            </CompanyInfo>
-            <Location>Mumbai, IN</Location>
-          </CompanyHeader>
-          <RoleInfo>
-            <Position>Software Engineer Intern</Position>
-            <Duration>May 21 - Jul 21</Duration>
-          </RoleInfo>
-          <Details>
-            <li>Participated in developing and delivering an application for consumers and care providers to book medical appointments.</li>
-            <li>Helped improve user interface rendering patterns working with a team using Model-View-ViewModel design pattern for the application.</li>
-            <li>Implemented Login screen and OTP authentication using JSON Web Token.</li>
-          </Details>
-        </ExperienceCard>
+            <RoleSection>
+              <Position>Associate Application Developer                                         Jul 22 - Sep 24</Position>
+              <Description>
+                Redesigned the Role-Based Access Control (RBAC) system by moving authorization checks from individual microservices to the API Gateway, leveraging URL and HTTP method mapping for faster interservice requests. Developed a migration strategy to seamlessly transition legacy role records, ensuring zero downtime and no customer impact.
+                Engineered a high-performance RBAC logging system using Kafka Streams, capturing user access metadata (URL, method, role, IP, branch context, session, status) with minimal request overhead. Designed a buffered, single-threaded publisher in the API Gateway for efficiency, along with a fallback mechanism to guarantee log persistence even during Kafka outages.
+                Improved performance of Core APIs by fault tolerant caching of resources, reducing redundant interservice calls and latency. Enhanced query efficiency with efficient JPA mappings and database indexing, delivering faster response times and reduced load.
+                Resolved and implemented over 250 bug fixes and feature enhancements, improving stability, security, and performance across multiple application versions.
+              </Description>
+            </RoleSection>
+          </ExperienceCard>
+        </LeftCol>
 
-        <ExperienceCard>
-          <CompanyHeader>
-            <CompanyInfo>
-              <CompanyLogo src="/logos/story-of-makers-logo.png" alt="Story Of Makers" />
-              <CompanyName>Story Of Makers</CompanyName>
-            </CompanyInfo>
-            <Location>Mumbai, IN</Location>
-          </CompanyHeader>
-          <RoleInfo>
-            <Position>Coding Instructor</Position>
-            <Duration>Oct 20 - Dec 20</Duration>
-          </RoleInfo>
-          <Details>
-            <li>Contributed to planning appropriate and engaging lessons learning applications.</li>
-            <li>Taught diverse student population by employing various learning styles and abilities.</li>
-            <li>Graded quizzes, tests, homework and projects to provide students with timely academic progress information and feedback.</li>
-          </Details>
-          <CertificateLink href="https://drive.google.com/file/xxx" target="_blank">
-            Certificate On Google Drive →
-          </CertificateLink>
-        </ExperienceCard>
+        <RightCol>
+          <ExperienceCard>
+            <CompanyHeader>
+              <CompanyLogo src="https://api.builder.io/api/v1/image/assets/TEMP/9c3a6b0d6438177e34687ca9804d644aa57f92f5?width=192" alt="HealthNow" />
+              <CompanyInfo>
+                <CompanyName>HealthNow Technologies</CompanyName>
+                <Location>Mumbai, IN</Location>
+              </CompanyInfo>
+            </CompanyHeader>
+            
+            <RoleSection>
+              <Position>Software Engineer Intern                                                         May 21 - Jul 21</Position>
+              <Description>
+                Used flutter framework for developing an e-commerce application for both Android and iOS platforms.
+                Designed pixel-perfect User Interface and worked with a team using Model-View-ViewModel design pattern for the application.
+                Implemented Login screen and OTP authentication using JSON Web Token.
+                
+              </Description>
+              <CertificateLink href="https://drive.google.com" target="_blank">Certificate On Google Drive</CertificateLink>
+            </RoleSection>
+          </ExperienceCard>
+
+          <ExperienceCard>
+            <CompanyHeader>
+              <CompanyLogo src="https://api.builder.io/api/v1/image/assets/TEMP/5766d6b67ee0d9f153d7019652d9eb86e4c1080f?width=138" alt="Story Of Makers" />
+              <CompanyInfo>
+                <CompanyName>Story Of Makers</CompanyName>
+                <Location>Mumbai, IN</Location>
+              </CompanyInfo>
+            </CompanyHeader>
+            
+            <RoleSection>
+              <Position>Coding Instructor                                                                         Oct 20 - Dec 20</Position>
+              <Description>
+                Contributed to planning appropriate and engaging lessons learning applications. 
+                Taught diverse student population by employing various learning styles and abilities. 
+                Graded quizzes, tests, homework and projects to provide students with timely academic progress information and feedback.
+
+              </Description>
+              <CertificateLink href="https://drive.google.com" target="_blank">Certificate On Google Drive</CertificateLink>
+            </RoleSection>
+          </ExperienceCard>
+        </RightCol>
       </Content>
     </ExperienceContainer>
   );

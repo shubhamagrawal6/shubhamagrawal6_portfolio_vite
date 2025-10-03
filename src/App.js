@@ -8,7 +8,15 @@ import Education from './pages/Education';
 
 const AppContainer = styled.div`
   min-height: 100vh;
-  background: #222222;
+  background: #222;
+  display: flex;
+  flex-direction: column;
+`;
+
+const MainWrapper = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 `;
 
 function App() {
@@ -16,11 +24,13 @@ function App() {
     <Router>
       <AppContainer>
         <Navigation />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/experience" element={<Experience />} />
-          <Route path="/education" element={<Education />} />
-        </Routes>
+        <MainWrapper>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/experience" element={<Experience />} />
+            <Route path="/education" element={<Education />} />
+          </Routes>
+        </MainWrapper>
         <Footer />
       </AppContainer>
     </Router>

@@ -1,89 +1,93 @@
 import React from 'react';
-import styled from "styled-components";
-import Navigation from "../components/Navigation";
+import styled from 'styled-components';
 
 const EducationContainer = styled.div`
-  position: relative;
-  width: 100%;
   min-height: 100vh;
-  background: #000000;
-  padding: 7.5rem 3.75rem 5rem;
-  color: #FFFFFF;
+  background: #222;
+  display: flex;
+  flex-direction: column;
+  padding-top: 93px;
+`;
+
+const Header = styled.div`
+  width: 100%;
+  height: 125px;
+  background: #252525;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+  display: flex;
+  align-items: center;
+  padding: 0 68px;
 
   @media (max-width: 768px) {
-    padding: 6.25rem 1.25rem 3.75rem;
+    padding: 0 24px;
+    height: 100px;
   }
 `;
 
 const PageTitle = styled.h1`
-  font-family: 'Poppins';
-  font-size: 48px;
-  font-weight: 600;
-  margin-bottom: 60px;
-  color: #FFFFFF;
+  font-family: 'Poppins', sans-serif;
+  font-size: 55px;
+  font-weight: 700;
+  line-height: 35px;
+  color: #FFF;
 
   @media (max-width: 768px) {
     font-size: 36px;
-    margin-bottom: 40px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 28px;
   }
 `;
 
 const Content = styled.div`
-  max-width: 75rem;
-  margin: 0 auto;
-  padding: 0 1rem;
-  
-  @media (max-width: 768px) {
-    padding: 0 0.5rem;
-  }
-`;
+  flex: 1;
+  padding: 53px 110px 80px;
+  display: flex;
+  gap: 150px;
 
-const Card = styled.div`
-  margin-bottom: 3.75rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.5rem;
-  align-items: start;
-  background: #1C1C1C;
-  border: 0.0625rem solid #333;
-  border-radius: 0.625rem;
-  padding: 1.875rem;
+  @media (max-width: 1400px) {
+    gap: 80px;
+  }
 
   @media (max-width: 1024px) {
-    grid-template-columns: 1fr;
-    gap: 1.875rem;
+    flex-direction: column;
+    padding: 40px 40px 60px;
+    gap: 60px;
   }
 
   @media (max-width: 768px) {
-    padding: 1.25rem;
-    margin-bottom: 2.5rem;
-  }
-
-  @media (max-width: 480px) {
-    padding: 1rem;
-    margin-bottom: 1.875rem;
+    padding: 40px 24px 60px;
   }
 `;
 
-const Institution = styled.div`
+const LeftCol = styled.div`
+  flex: 1;
+`;
+
+const RightCol = styled.div`
+  flex: 1;
+`;
+
+const EducationCard = styled.div``;
+
+const InstitutionHeader = styled.div`
   display: flex;
+  align-items: center;
   gap: 20px;
-  margin-bottom: 40px;
-
-  @media (max-width: 768px) {
-    gap: 15px;
-    margin-bottom: 30px;
-  }
+  margin-bottom: 24px;
 `;
 
-const InstitutionLogo = styled.img`
-  width: 48px;
-  height: 48px;
+const Logo = styled.img`
+  width: 80px;
+  height: 80px;
   object-fit: contain;
+  flex-shrink: 0;
 
-  @media (max-width: 480px) {
-    width: 40px;
-    height: 40px;
+  @media (max-width: 768px) {
+    width: 60px;
+    height: 60px;
   }
 `;
 
@@ -92,80 +96,58 @@ const InstitutionInfo = styled.div`
 `;
 
 const InstitutionName = styled.h3`
-  font-family: 'Poppins';
-  font-size: 24px;
-  font-weight: 500;
-  margin-bottom: 5px;
-
-  @media (max-width: 768px) {
-    font-size: 20px;
-  }
-`;
-
-const Degree = styled.h4`
-  font-family: 'Poppins';
+  font-family: 'Poppins', sans-serif;
   font-size: 18px;
-  font-weight: 400;
-  margin-bottom: 5px;
-  color: rgba(255, 255, 255, 0.9);
+  font-weight: 700;
+  line-height: 35px;
+  color: #FFF;
+  margin-bottom: 4px;
 
   @media (max-width: 768px) {
     font-size: 16px;
   }
 `;
 
-const Period = styled.div`
-  font-family: 'Poppins';
-  font-size: 16px;
-  color: rgba(255, 255, 255, 0.7);
-  font-style: italic;
-
-  @media (max-width: 768px) {
-    font-size: 14px;
-  }
-`;
-
 const Location = styled.span`
-  font-family: 'Poppins';
-  font-size: 16px;
-  color: rgba(255, 255, 255, 0.7);
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
   font-style: italic;
-  margin-left: auto;
+  line-height: 35px;
+  color: #FFF;
 
   @media (max-width: 768px) {
-    font-size: 14px;
+    font-size: 16px;
   }
 `;
 
-const CourseList = styled.ul`
-  list-style-type: disc;
-  padding-left: 1.25rem;
-  color: rgba(255, 255, 255, 0.8);
-  
-  li {
-    font-family: 'Poppins';
-    font-size: 0.875rem;
-    margin-bottom: 0.5rem;
-    line-height: 1.6;
-    transition: all 0.3s ease;
+const Degree = styled.h4`
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 35px;
+  color: #FFF;
+  margin-bottom: 16px;
 
-    &:hover {
-      color: rgba(255, 255, 255, 1);
-      transform: translateX(0.25rem);
-    }
-
-    @media (max-width: 768px) {
-      font-size: 0.8125rem;
-      margin-bottom: 0.375rem;
-    }
+  @media (max-width: 768px) {
+    font-size: 16px;
   }
 `;
 
-const CertificationSection = styled.div`
-  margin-bottom: 40px;
+const CourseList = styled.div`
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  color: rgba(255, 255, 255, 0.7);
+`;
 
-  @media (max-width: 768px) {
-    margin-bottom: 30px;
+const CertificationCard = styled.div`
+  margin-bottom: 44px;
+
+  &:last-child {
+    margin-bottom: 0;
   }
 `;
 
@@ -173,136 +155,121 @@ const CertificationHeader = styled.div`
   display: flex;
   align-items: center;
   gap: 20px;
-  margin-bottom: 20px;
-
-  @media (max-width: 768px) {
-    gap: 15px;
-  }
-`;
-
-const CertificationLogo = styled.img`
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
-`;
-
-const CertificationInfo = styled.div`
-  flex: 1;
+  margin-bottom: 16px;
 `;
 
 const CertificationTitle = styled.h3`
-  font-family: 'Poppins';
-  font-size: 20px;
-  font-weight: 500;
-  margin-bottom: 5px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 35px;
+  color: #FFF;
 
   @media (max-width: 768px) {
-    font-size: 18px;
+    font-size: 16px;
   }
 `;
 
-const CertificateLink = styled.a`
-  font-family: 'Poppins';
-  font-size: 14px;
-  color: #4A9DEC;
-  text-decoration: none;
-  display: inline-block;
-  margin-top: 10px;
-  
-  &:hover {
-    text-decoration: underline;
-  }
+const CertificationList = styled.div`
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 12px;
+`;
 
-  @media (max-width: 768px) {
-    font-size: 13px;
+const CertificateLink = styled.a`
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 20px;
+  color: #6BE1FF;
+  text-decoration: underline;
+  display: inline-block;
+  cursor: pointer;
+
+  &:hover {
+    color: #8EEAFF;
   }
 `;
 
 const Education = () => {
   return (
     <EducationContainer>
-      <Navigation />
-      <Content>
+      <Header>
         <PageTitle>Education and Certifications</PageTitle>
-        
-        <Card>
-          {/* Education Section */}
-          <div>
-            <Institution>
-              <InstitutionLogo src="/logos/vjti-logo.png" alt="VJTI" />
+      </Header>
+      <Content>
+        <LeftCol>
+          <EducationCard>
+            <InstitutionHeader>
+              <Logo src="https://api.builder.io/api/v1/image/assets/TEMP/35f79d455d330ebd6c745cb58cf9435326cedb46?width=201" alt="VJTI" />
               <InstitutionInfo>
                 <InstitutionName>Veermata Jijabai Technological Institute</InstitutionName>
-                <Degree>B. Tech in Electronics and Telecommunication</Degree>
-                <Period>Aug 18 - Jun 22</Period>
+                <Location>Mumbai, IN</Location>
               </InstitutionInfo>
-              <Location>Mumbai, IN</Location>
-            </Institution>
+            </InstitutionHeader>
+            
+            <Degree>B.Tech in Electronics and Telecommunication                   Aug 18 - Jun 22</Degree>
+            
             <CourseList>
-              <li>Computer Programming (C++)</li>
-              <li>Digital Signal Processing</li>
-              <li>Data Structures</li>
-              <li>Algorithms</li>
-              <li>Object Oriented Programming</li>
-              <li>Database Management Systems</li>
-              <li>Computer Networks</li>
-              <li>Operating Systems</li>
-              <li>Applied Machine Learning and Fuzzy Systems</li>
-              <li>Pattern Recognition and Machine Vision</li>
-              <li>Digital Image Processing</li>
+              Relevant Coursework: 
+              Computer Programming (C++)
+              Python Programming
+              Data Structures
+              Algorithms
+              Object Oriented Programming
+              Database Management Systems
+              Computer Networks
+              Operating Systems
+              Applied Machine Learning and Fuzzy Systems
+              Pattern Recognition and Machine Vision
+              Digital Image Processing.
             </CourseList>
-          </div>
+          </EducationCard>
+        </LeftCol>
 
-          {/* Certifications Section */}
-          <div>
-            <CertificationSection>
-              <CertificationHeader>
-                <CertificationLogo src="/logos/oracle-logo.png" alt="Oracle" />
-                <CertificationInfo>
-                  <CertificationTitle>
-                    Oracle Cloud Infrastructure Foundations Associate
-                  </CertificationTitle>
-                </CertificationInfo>
-              </CertificationHeader>
-              <CourseList>
-                <li>OCI Fundamentals</li>
-                <li>Identity And Access Management in OCI</li>
-                <li>Networking in OCI</li>
-                <li>Compute Instances in OCI</li>
-                <li>Container Management in OCI</li>
-                <li>Observability and Monitoring in OCI</li>
-                <li>Security Management in OCI</li>
-                <li>Governance and Administration in OCI</li>
-              </CourseList>
-              <CertificateLink href="https://catalog-education.oracle.com/pls/certview/sharebadge?id=xxx" target="_blank">
-                Certificate on Oracle University →
-              </CertificateLink>
-            </CertificationSection>
+        <RightCol>
+          <CertificationCard>
+            <CertificationHeader>
+              <Logo src="https://api.builder.io/api/v1/image/assets/TEMP/8f7a98dc6e36dfef377281329c929011c7ba1b6c?width=192" alt="Oracle" />
+              <CertificationTitle>Oracle Cloud Infrastructure Foundations Associate</CertificationTitle>
+            </CertificationHeader>
+            
+            <CertificationList>
+              OCI Fundamentals
+              Identity And Access Management in OCI
+              Networking in OCI
+              Compute Instances in OCI
+              Storage Management in OCI
+              Observability and Monitoring in OCI
+              Security Management in OCI
+              Governance and Administration in OCI
 
-            <CertificationSection>
-              <CertificationHeader>
-                <CertificationLogo src="/logos/oracle-logo.png" alt="Oracle" />
-                <CertificationInfo>
-                  <CertificationTitle>
-                    Oracle Cloud Infrastructure AI Foundations Associate
-                  </CertificationTitle>
-                </CertificationInfo>
-              </CertificationHeader>
-              <CourseList>
-                <li>OCI Fundamentals</li>
-                <li>Identity And Access Management in OCI</li>
-                <li>Networking in OCI</li>
-                <li>Compute Instances in OCI</li>
-                <li>Container Management in OCI</li>
-                <li>Observability and Monitoring in OCI</li>
-                <li>Security Management in OCI</li>
-                <li>Governance and Administration in OCI</li>
-              </CourseList>
-              <CertificateLink href="https://catalog-education.oracle.com/pls/certview/sharebadge?id=xxx" target="_blank">
-                Certificate on Oracle University →
-              </CertificateLink>
-            </CertificationSection>
-          </div>
-        </Card>
+            </CertificationList>
+            <CertificateLink href="https://catalog-education.oracle.com" target="_blank">Certificate on Oracle University</CertificateLink>
+          </CertificationCard>
+
+          <CertificationCard>
+            <CertificationHeader>
+              <Logo src="https://api.builder.io/api/v1/image/assets/TEMP/8f7a98dc6e36dfef377281329c929011c7ba1b6c?width=192" alt="Oracle" />
+              <CertificationTitle>Oracle Cloud Infrastructure AI Foundations Associate</CertificationTitle>
+            </CertificationHeader>
+            
+            <CertificationList>
+              AI Foundations
+              Machine Learning Foundations
+              Deep Learning Foundations
+              Generative AI and LLM Foundations
+              OCI AI Portfolio
+              OCI Generative AI Service
+              OCI AI Service
+
+            </CertificationList>
+            <CertificateLink href="https://catalog-education.oracle.com" target="_blank">Certificate on Oracle University</CertificateLink>
+          </CertificationCard>
+        </RightCol>
       </Content>
     </EducationContainer>
   );
