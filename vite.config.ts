@@ -5,7 +5,7 @@
 
   export default defineConfig({
     // base must match the repository name when deploying to GitHub Pages
-    base: '/shubhamagrawal6_portfolio_react/',
+    base: '/shubhamagrawal6_portfolio_vite/',
     plugins: [react()],
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
