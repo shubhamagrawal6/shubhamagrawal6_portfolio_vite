@@ -4,6 +4,8 @@
   import path from 'path';
 
   export default defineConfig({
+    // base must match the repository name when deploying to GitHub Pages
+    base: '/shubhamagrawal6_portfolio_react/',
     plugins: [react()],
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
