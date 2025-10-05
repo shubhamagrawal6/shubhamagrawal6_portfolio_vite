@@ -4,8 +4,9 @@
   import path from 'path';
 
   export default defineConfig({
-    // base must match the repository name when deploying to GitHub Pages
-    base: '/shubhamagrawal6_portfolio_vite/',
+  // Use a relative base so assets load correctly when the site is served from a custom domain
+  // (prevents built HTML from requesting /<repo-name>/assets/... which causes 404s)
+  base: './',
     plugins: [react()],
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
