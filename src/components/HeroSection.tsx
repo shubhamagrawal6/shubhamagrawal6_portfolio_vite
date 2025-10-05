@@ -1,6 +1,9 @@
 import { motion } from 'motion/react';
 import profileImage from 'app:asset/profilePhoto.png';
 
+const resumeUrl = import.meta.env.VITE_MY_RESUME_URL;
+const emailAddress = import.meta.env.VITE_MY_EMAIL;
+
 export function HeroSection() {
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -60,7 +63,7 @@ export function HeroSection() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => window.open('https://drive.google.com/file/d/1Ty76hOKOViu3QOuh7knc9Y9gyp6A5pQD/view?usp=drive_link', '_blank')}
+              onClick={() => window.open(resumeUrl, '_blank')}
               className="px-8 py-3 border-2 border-white text-white rounded-full hover:bg-white hover:text-black transition-colors"
             >
               Resume
@@ -68,7 +71,7 @@ export function HeroSection() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => window.open('mailto:shubhamagrawal322@gmail.com')}
+              onClick={() => window.open(emailAddress)}
               className="px-8 py-3 border-2 border-white text-white rounded-full hover:bg-white hover:text-black transition-colors"
             >
               Contact
