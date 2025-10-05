@@ -5,6 +5,9 @@ import oracleLogo from 'app:asset/oracleLogo.png';
 import healthNowLogo from 'app:asset/healthNowLogo.png';
 import storyOfMakersLogo from 'app:asset/storyOfMakersLogo.png';
 
+const healthNowCertUrl = import.meta.env.VITE_HEALTHNOW_CERT_URL;
+const storyOfMakersCertUrl = import.meta.env.VITE_STORY_OF_MAKERS_CERT_URL;
+
 export function ExperienceSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
@@ -50,7 +53,7 @@ export function ExperienceSection() {
             'Designed pixel-perfect User Interface and worked with a team using Model-View-ViewModel design pattern for the application.',
             'Implemented Login screen and OTP authentication using JSON Web Token.',
           ],
-          certificateLink: 'https://drive.google.com/file/d/12J1Ovma57ChEew5ZkLAVHkjoIodYfxdo/view?usp=drive_link',
+          certificateLink: healthNowCertUrl,
         },
       ],
     },
@@ -67,7 +70,7 @@ export function ExperienceSection() {
             'Taught diverse student population by employing various learning styles and abilities.',
             'Graded quizzes, tests, homework and projects to provide students with timely academic progress information and feedback.',
           ],
-          certificateLink: 'https://drive.google.com/file/d/1atPKMOQcSoxWSAaNhq0ovJTK5yo8SAd8/view?usp=drive_link',
+          certificateLink: storyOfMakersCertUrl,
         },
       ],
     },
@@ -129,7 +132,7 @@ export function ExperienceSection() {
                         onClick={() => window.open(role.certificateLink, '_blank')}
                         className="inline-block px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
                       >
-                        Certificate on Google Drive
+                        Certificate Link
                       </a>
                     </div>
                   )}

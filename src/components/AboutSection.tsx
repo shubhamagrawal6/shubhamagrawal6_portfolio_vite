@@ -1,9 +1,6 @@
 import { motion } from 'motion/react';
 import { useInView } from 'motion/react';
 import { useRef } from 'react';
-import linkedinLogo from 'app:asset/linkedinLogo.png';
-import githubLogo from 'app:asset/githubLogo.png';
-import leetcodeLogo from 'app:asset/leetcodeLogo.png';
 
 export function AboutSection() {
   const ref = useRef(null);
@@ -29,7 +26,7 @@ export function AboutSection() {
           className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 space-y-6 text-gray-200"
         >
           <p>
-            I'm a passionate Software Developer with over 2 years of experience building 
+            I'm a passionate Software Developer with over 3 years of experience building 
             scalable and efficient applications. My journey in software development began 
             during my B.Tech in Electronics and Telecommunication, where I discovered my 
             love for coding and problem-solving.
@@ -44,7 +41,7 @@ export function AboutSection() {
 
           <p>
             I'm driven by the challenge of optimizing application performance and enhancing 
-            security. Throughout my career, I've successfully resolved over 450 bugs and 
+            security. Throughout my career, I've successfully resolved over 250 bugs and 
             implemented numerous feature enhancements, always striving to deliver high-quality, 
             maintainable code.
           </p>

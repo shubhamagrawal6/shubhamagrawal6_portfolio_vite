@@ -4,6 +4,9 @@ import { useRef } from 'react';
 import vjtiLogo from 'app:asset/vjtiLogo.png';
 import oracleLogo from 'app:asset/oracleLogo.png';
 
+const ociCloudCertUrl = import.meta.env.VITE_OCI_CLOUD_CERT_URL;
+const ociAICertUrl = import.meta.env.VITE_OCI_AI_CERT_URL;
+
 export function EducationSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
@@ -44,7 +47,7 @@ export function EducationSection() {
         'Security Management in OCI',
         'Governance and Administration in OCI',
       ],
-      certificateLink: 'https://catalog-education.oracle.com/ords/certview/sharebadge?id=0285F24536C88BB8E552EFF08FA333B0B3DD8EC9A67B281785363DF92C5BB286',
+      certificateLink: ociCloudCertUrl,
     },
     {
       name: 'Oracle Cloud Infrastructure AI Foundations Associate',
@@ -59,7 +62,7 @@ export function EducationSection() {
         'OCI Generative AI Service',
         'OCI AI Service',
       ],
-      certificateLink: 'https://catalog-education.oracle.com/ords/certview/sharebadge?id=1D7AFBDBBB3CB52F9D47AA5BFABE6953216D678AE69A8EC63F5B54AEAB9C0D97',
+      certificateLink: ociAICertUrl,
     },
   ];
 

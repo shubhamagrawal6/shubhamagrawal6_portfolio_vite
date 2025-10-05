@@ -31,6 +31,15 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          VITE_MY_RESUME_URL: ${{ secrets.VITE_MY_RESUME_URL }}
+          VITE_HEALTHNOW_CERT_URL: ${{ secrets.VITE_HEALTHNOW_CERT_URL }}
+          VITE_STORY_OF_MAKERS_CERT_URL: ${{ secrets.VITE_STORY_OF_MAKERS_CERT_URL }}
+          VITE_OCI_CLOUD_CERT_URL: ${{ secrets.VITE_OCI_CLOUD_CERT_URL }}
+          VITE_OCI_AI_CERT_URL: ${{ secrets.VITE_OCI_AI_CERT_URL }}
+          VITE_MY_GITHUB_URL: ${{ secrets.VITE_MY_GITHUB_URL }}
+          VITE_MY_LINKEDIN_URL: ${{ secrets.VITE_MY_LINKEDIN_URL }}
+          VITE_MY_LEETCODE_URL: ${{ secrets.VITE_MY_LEETCODE_URL }}
 
       - name: Add CNAME for custom domain (if provided)
         env:
