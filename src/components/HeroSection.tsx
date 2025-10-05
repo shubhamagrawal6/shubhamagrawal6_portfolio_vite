@@ -68,7 +68,7 @@ export function HeroSection() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => window.open()}
+              onClick={() => window.open('mailto:shubhamagrawal322@gmail.com')}
               className="px-8 py-3 border-2 border-white text-white rounded-full hover:bg-white hover:text-black transition-colors"
             >
               Contact
