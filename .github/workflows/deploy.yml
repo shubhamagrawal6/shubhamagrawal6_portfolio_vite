@@ -32,6 +32,13 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Add CNAME for custom domain (if provided)
+        if: ${{ secrets.CUSTOM_DOMAIN != '' }}
+        run: |
+          echo "Adding CNAME from secrets.CUSTOM_DOMAIN"
+          mkdir -p ./build
+          echo "${{ secrets.CUSTOM_DOMAIN }}" > ./build/CNAME
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
