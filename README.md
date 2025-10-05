@@ -15,4 +15,4 @@
 
   npm run deploy
 
-This will build the app into the `build` folder and publish it to the `gh-pages` branch. In your GitHub repository settings (Pages), set the source to the `gh-pages` branch if it isn't set automatically. The site will be available at: `https://<your-username>.github.io/shubhamagrawal6_portfolio_react/`
+This will build the app into the `build` folder and publish it to the `gh-pages` branch. In your GitHub repository settings (Pages), set the source to the `gh-pages` branch if it isn't set automatically. The site will be available at: `https://shubhamagrawal6.github.io/shubhamagrawal6_portfolio_vite/`
