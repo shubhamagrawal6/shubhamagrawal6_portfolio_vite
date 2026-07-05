@@ -49,15 +49,16 @@ export function HeroSection() {
 
         <div className="flex-1 text-white">
           <motion.p variants={itemVariants} className="text-gray-300 mb-2">
-            Software Developer 2
+            System Development Engineer 1
           </motion.p>
           <motion.h1 variants={itemVariants} className="mb-6" style={{ fontSize: '2.5rem', fontWeight: 'bold' }}>
             Shubham Agrawal
           </motion.h1>
           <motion.p variants={itemVariants} className="text-gray-200 mb-8 max-w-2xl">
-            I am a results-driven Software Developer with expertise in RESTful APIs, 
-            microservices, and cloud technologies. I excel at optimizing application 
-            performance, enhancing security, and resolving complex issues.
+            I am a results-driven Software Developer with expertise in cloud-native 
+            backend systems, infrastructure-as-code, and full-stack platform development. I excel 
+            at designing scalable architectures, automating operations, and solving complex 
+            distributed-systems problems.
           </motion.p>
           <motion.div variants={itemVariants} className="flex gap-4">
             <motion.button

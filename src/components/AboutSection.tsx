@@ -26,30 +26,31 @@ export function AboutSection() {
           className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 space-y-6 text-gray-200"
         >
           <p>
-            I'm a passionate Software Developer with over 3 years of experience building 
-            scalable and efficient applications. My journey in software development began 
-            during my B.Tech in Electronics and Telecommunication, where I discovered my 
+            I'm a passionate Software Development Engineer with experience building scalable, 
+            cloud-native applications from the ground up. My journey in software development 
+            began during my B.Tech in Electronics and Telecommunication, where I discovered my 
             love for coding and problem-solving.
           </p>
           
           <p>
-            Currently working as a Software Developer 2 at Oracle Financial Services, I 
-            specialize in building microservices architectures, RESTful APIs, and cloud-native 
-            applications. I have a strong foundation in Java, Spring Boot, and cloud technologies, 
-            with hands-on experience in Oracle Cloud Infrastructure.
+            Currently working as a System Development Engineer 1 at Amazon's GREF Tech org, I 
+            specialize in building full-stack platforms on AWS — designing backend services in 
+            Python and FastAPI, infrastructure as code with CDK, and React-based frontends. I have 
+            hands-on experience across the stack, from database design to auto-scaling compute and 
+            CI/CD pipelines.
           </p>
 
           <p>
-            I'm driven by the challenge of optimizing application performance and enhancing 
-            security. Throughout my career, I've successfully resolved over 250 bugs and 
-            implemented numerous feature enhancements, always striving to deliver high-quality, 
-            maintainable code.
+            I'm driven by the challenge of solving non-obvious, cross-system problems — whether 
+            that's designing around platform limitations, building configuration-driven systems 
+            that scale without code changes, or improving operational reliability through 
+            automation and monitoring.
           </p>
 
           <p>
-            Beyond coding, I enjoy sharing knowledge with others. My experience as a Coding 
-            Instructor at Story Of Makers allowed me to help students develop their programming 
-            skills and discover their passion for technology.
+            Beyond my current role, I bring experience from Oracle Financial Services, where I 
+            worked on microservices architecture, API security, and high-performance logging 
+            systems, resolving 250+ bugs and feature enhancements across the platform.
           </p>
 
           <p>

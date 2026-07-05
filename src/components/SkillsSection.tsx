@@ -13,15 +13,15 @@ export function SkillsSection() {
     },
     {
       category: 'Frameworks & Libraries',
-      skills: ['Spring', 'Hibernate', 'JPA', 'Apache Kafka'],
+      skills: ['FastAPI', 'Spring', 'Hibernate', 'React'],
     },
     {
       category: 'Cloud & DevOps',
-      skills: ['Oracle Cloud Infrastructure', 'Docker', 'Kubernetes', 'Jenkins'],
+      skills: ['AWS', 'Oracle Cloud Infrastructure', 'Docker', 'Kubernetes'],
     },
     {
       category: 'Databases',
-      skills: ['Oracle', 'MySQL', 'PostgreSQL', 'MongoDB'],
+      skills: ['PostgreSQL', 'DynamoDB', 'Aurora', 'Redshift', 'Oracle', 'MySQL', 'MongoDB'],
     },
     {
       category: 'Tools & Technologies',

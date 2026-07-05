@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { useInView } from 'motion/react';
 import { useRef } from 'react';
+import amazonLogo from 'app:asset/amazonLogo.png';
 import oracleLogo from 'app:asset/oracleLogo.png';
 import healthNowLogo from 'app:asset/healthNowLogo.png';
 import storyOfMakersLogo from 'app:asset/storyOfMakersLogo.png';
@@ -14,13 +15,30 @@ export function ExperienceSection() {
 
   const experiences = [
     {
+      company: 'Amazon (GREF Tech)',
+      logo: amazonLogo,
+      location: 'Hyderabad, IN',
+      roles: [
+        {
+          title: 'System Development Engineer 1',
+          period: 'Nov 25 - Present',
+          description: [
+            'Led end-to-end build-out of an internal audit management platform — authored the functional requirements and system design, then built the backend (Python/FastAPI on AWS ECS, with an ORM data layer and managed authentication) and a React frontend for audit workflows and permission management.',
+            'Designed and provisioned the platform\'s cloud infrastructure as code — a managed database, load balancer, auto-scaling compute, monitoring dashboards/alarms, and an automated deployment pipeline with rollback support.',
+            'Worked around a hard timeout limit in a synchronous API gateway by designing an asynchronous proxy pattern, unblocking a third-party permissions integration across multiple internal services.',
+            'Designed a configuration-driven permission system that maps spreadsheet data to access rules automatically, removing the need for code changes on each new department onboarding.',
+          ],
+        },
+      ],
+    },
+    {
       company: 'Oracle Financial Services Software',
       logo: oracleLogo,
       location: 'Bengaluru, IN',
       roles: [
         {
           title: 'Software Developer 2',
-          period: 'Sep 24 - Present',
+          period: 'Sep 24 - Nov 25',
           description: [
             'Enhanced microservices handling core resources by integrating with external systems, enabling extensibility of resource data and ensuring UI-captured modifications are synchronized and persisted across systems.',
             'Designed and implemented SCIM-compliant APIs in the User and Role Management service, enabling seamless migration and provisioning of SSO-managed users into the application.',
