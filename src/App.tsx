@@ -5,7 +5,7 @@ import { EducationSection } from './components/EducationSection';
 import { SkillsSection } from './components/SkillsSection';
 import { AboutSection } from './components/AboutSection';
 import { Footer } from './components/Footer';
-import icebergImage from 'app:asset/icebergBackground.png';
+import icebergImage from 'app:asset/icebergBackground.webp';
 
 export default function App() {
   return (

@@ -35,7 +35,7 @@ export function Footer() {
           </motion.a>
         </div>
         
-        <p className="text-gray-400">© 2025 All Rights Reserved.</p>
+        <p className="text-gray-400">© 2026 All Rights Reserved.</p>
       </div>
     </footer>
   );
